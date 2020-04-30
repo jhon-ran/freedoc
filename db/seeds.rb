@@ -1,11 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+# 6 tables with their respective seeds
+# Use rails db:seed to charge the data
+# Then, rails console to see them on terminal
+# If wanna increase the # of seeds modify .times in each of the loops accordingly.
 
 require 'faker'
 Doctor.destroy_all 
@@ -55,19 +51,3 @@ end
   my_specialty = Specialty.find(Specialty.pluck(:id).shuffle.first)
   doctor_specialty = DoctorSpecialty.create!(doctor: my_doctor, specialty: my_specialty)
 end
-
-#my_doctor = Doctor.find(Doctor.pluck(:id).shuffle.first)
-#my_specialty = Specialty.find(Specialty.pluck(:id).shuffle.first)
-
-#my_specialty = Specialty.create!(specialty: option[rand(option.length)])
-
-
-# specialty: option[rand(option.length)]
-#  Doctor.destroy_all
-
-# full_name: Faker::Book.author
-# first_name: Faker::Name.first_name,
-# last_name: Faker::Name.last_name,
-# Faker::Number.between(from: 1900, to: 2020)
-
-# Doctor.clear_cache!
