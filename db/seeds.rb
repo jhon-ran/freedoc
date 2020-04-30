@@ -45,10 +45,20 @@ end
 end
 
 # Seed for Specialty
-option = ["Oncology", "Pediatrics", "Dermatology", "Cardiology", "Gynecologist"]
 10.times do
   my_specialty = Specialty.create!(specialty: Faker::Educator.subject)
 end
+
+# Seed for Doctor Specialty
+10.times do
+  my_doctor = Doctor.find(Doctor.pluck(:id).shuffle.first)
+  my_specialty = Specialty.find(Specialty.pluck(:id).shuffle.first)
+  doctor_specialty = DoctorSpecialty.create!(doctor: my_doctor, specialty: my_specialty)
+end
+
+#my_doctor = Doctor.find(Doctor.pluck(:id).shuffle.first)
+#my_specialty = Specialty.find(Specialty.pluck(:id).shuffle.first)
+
 #my_specialty = Specialty.create!(specialty: option[rand(option.length)])
 
 
