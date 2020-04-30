@@ -17,7 +17,7 @@ my_specialty = ["Oncology", "Pediatrics", "Dermatology", "Cardiology", "Gynecolo
 
 10.times do
   doctor = Doctor.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, 
-  specialty: my_specialty[rand(my_specialty.length)],zip_code: Faker::Address.zip_code)
+  zip_code: Faker::Address.zip_code)
 end
 
 # Seed for table Patient
@@ -46,6 +46,8 @@ end
   city = City.create!(city: Faker::Address.city, doctor: my_doctor, patient: my_patient, appointment: my_appointment)
 end
 
+
+# specialty: my_specialty[rand(my_specialty.length)]
 #  Doctor.destroy_all
 
 # full_name: Faker::Book.author

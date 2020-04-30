@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_04_30_124209) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "specialty"
     t.string "zip_code"
   end
 
