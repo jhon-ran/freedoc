@@ -26,8 +26,6 @@ end
 end
 
 # Seed for table Appointment
-
-
 10.times do
   d = Doctor.order("RANDOM()").limit(1).ids[0]
   p = Patient.order("RANDOM()").limit(1).ids[0]
@@ -40,6 +38,13 @@ end
   )
 end
 
+# Seed for table City
+10.times do
+  my_doctor = Doctor.find(Doctor.pluck(:id).shuffle.first)
+  my_patient = Patient.find(Patient.pluck(:id).shuffle.first)
+  my_appointment = Appointment.find(Appointment.pluck(:id).shuffle.first)
+  city = City.create!(city: Faker::Address.city, doctor: my_doctor, patient: my_patient, appointment: my_appointment)
+end
 
 #  Doctor.destroy_all
 
